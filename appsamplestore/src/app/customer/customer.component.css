@@ -1,0 +1,96 @@
+.clsimg
+{
+    cursor: pointer;
+}
+
+.input-search
+{
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    /*width: 68%;
+    margin-left:47%;*/
+}
+
+.formimg
+{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-end;
+    width: 570px;
+}
+
+.vieworders
+{
+    color: red;
+    text-decoration: none;
+}
+
+.neworders
+{
+    color: green;
+    text-decoration: none;
+}
+
+.clspaginator
+{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-end;
+    height: 30px;
+    padding-bottom:4px;
+
+}
+
+.lockscreen
+{
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top:0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.general-container
+{
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    align-content: center;
+    border-left:solid 1px;
+    border-right: solid 1px;
+}
+
+.header-predict
+{
+    width: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    color: white;
+    height: 40px;
+    padding-right: 30px;
+    padding-left: 30px;
+    
+}
+
+.head1 th
+{
+    border-bottom-width: 1px;
+}
+/*.clstitle
+{
+    margin-left: -67%;
+    outline: 0;
+
+
+}*/
