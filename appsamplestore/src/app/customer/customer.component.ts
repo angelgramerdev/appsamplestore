@@ -3,6 +3,7 @@ import { DatePipe } from '@angular/common';
 import { CustomerService } from '../customer.service';
 import { OrderComponent } from '../order/order.component';
 import { FormsModule } from '@angular/forms';
+import { NewOrderComponent } from '../new-order/new-order.component';
 
 
 
@@ -10,7 +11,7 @@ import { FormsModule } from '@angular/forms';
 @Component({
   selector: 'app-customer',
   standalone: true,
-  imports: [OrderComponent, FormsModule, DatePipe],
+  imports: [OrderComponent, NewOrderComponent,FormsModule, DatePipe],
   templateUrl: './customer.component.html',
   styleUrl: './customer.component.css',
     host: {
@@ -36,8 +37,10 @@ export class CustomerComponent implements OnInit {
   isOrderedByPredictedDate !:boolean;
   isModalOpen !:boolean;
   customerId !:number;
+  auxCustomerId !:number;
   selectedValue:any;
   inputName !:string;
+  isModalNewOrderOpen !:boolean;
 
 ngOnInit(): void 
 {
@@ -47,14 +50,13 @@ ngOnInit(): void
   this.isOrderedByLastOrderDate=true;
   this.isOrderedByPredictedDate=true;
   this.isModalOpen=false;
+  this.isModalNewOrderOpen=false;
   this.selectedValue=10;
 
       const elemento = this.element.nativeElement.querySelector('.form-control');
       if (elemento) {
         this.render.removeClass(elemento, 'form-control');
       }
-    debugger
-  
   this.getCustomers();
 }
 
@@ -68,7 +70,7 @@ getCustomers()
 
 orderByCustomerName()
 {
-  debugger
+
   if(this.isOrderedByName)
     {
         const sortedCopy = [...this.auxCustomers.customers].
@@ -145,7 +147,7 @@ quantityRows(e:any)
 
   openModal(customerId:number)
   {
-    debugger
+  
     this.customerId=customerId;
     if(!this.isModalOpen)
       {
@@ -157,21 +159,44 @@ quantityRows(e:any)
         }  
   }
 
+  openModalNewOrder(customerId:number)
+  {
+
+    this.auxCustomerId=customerId; 
+    if(!this.isModalNewOrderOpen)
+      {
+        this.isModalNewOrderOpen=true;
+      }
+      else
+        {
+          this.isModalNewOrderOpen=false;
+        } 
+
+    const elemento1 = this.element.nativeElement.querySelector('.cmb-employess');
+    console.log(elemento1.nativeElement)
+    elemento1.nativeElement.value="Employee"
+  }
+
   closeModal(isModalClosed:boolean)
   {
     this.isModalOpen=isModalClosed;
   }
 
+  closeModalNewOrder(isModalClosed:boolean)
+  {
+    this.isModalNewOrderOpen=isModalClosed;
+  }
+
   changeInput(e:any)
   {
-    debugger
+
     console.log(e);
     this.inputName=e.value;
   }
 
   searchByName()
   {
-    debugger
+
     if(this.inputName.length <= 0)
         return;
         

@@ -17,4 +17,9 @@ export class OrderService {
     return this.http.get(environment.url+"/GetOrders?customerId="+customerId+"&page="+page+"&rows="+rows)
   }
 
+  saveOrderDetails(orderDetail:any)
+  {
+    return this.http.post(environment.url+"/SaveOrderDetails", orderDetail)
+  }
+
 }

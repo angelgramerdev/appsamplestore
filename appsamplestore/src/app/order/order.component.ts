@@ -55,7 +55,6 @@ export class OrderComponent implements OnInit {
 
 getOrders(customerId:number)
 {
-  debugger
   this.rows=this.selectedValue;
   this.service.getOrders(customerId, this.page, this.rows).subscribe(res=> {
     this.auxOrders=res;

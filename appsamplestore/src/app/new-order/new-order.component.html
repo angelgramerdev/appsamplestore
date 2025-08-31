@@ -1,0 +1,95 @@
+<!--<!doctype html>
+<html lang="en">
+  <head>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <title>users</title>
+  </head>
+  <body>-->
+  <head>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <title>New Order</title>
+  </head>
+    <div class="clsmodal">
+        <div class="neworder-header">
+          Customer AHPOP - New Order
+        </div>
+        <h6 class="title1">Order</h6>
+        <div class="first-section">
+           <select  class="cmb-employess borders" [(ngModel)]="employeeSelectedValue" style="padding-right: 30px;">
+                  <option value="0" selected>Employee</option>
+                 
+                  @for(e of auxEmployees; track $index)
+                  {
+                    <option value="{{e.empId}}">{{ e.fullName }}</option>
+                 }      
+            </select>
+            <select class="cmb-shippers borders" [(ngModel)]="shiperSelectedValue" style="padding-right: 30px;">
+            <option value="0" selected>Shipper</option>
+             
+            @for(s of auxShippers.shippers; track $index)
+            {
+              <option value="{{s.shipperId}} ">{{ s.companyName }}</option>
+            }
+            </select>      
+        </div>
+        <div class="second-section">
+          <input class="input-name borders" [(ngModel)]="shipName" text="text" placeholder="Ship Name">
+        </div>
+
+        <div class="third-section">
+          <input class="input-address borders" [(ngModel)]="shipAddress" text="text" placeholder="Ship Address">
+          <input class="input-city borders" [(ngModel)]="shipCity" text="text" placeholder="Ship City">
+          <input class="input-country borders" [(ngModel)]="shipCountry" text="text" placeholder="Ship Country">
+        </div>
+    <div class="fourth-section">
+      <input id="orderdate" [(ngModel)]="orderDate" class="borders combox" type="date" placeholder="Order Date">
+      <input [(ngModel)]="requiredDate" class="borders combox" type="date" placeholder="Required Date">
+      <input [(ngModel)]="shippedDate" class="borders combox" type="date" placeholder="Shipped Date">
+    </div>
+    <div class="fith-section">
+      <input class="input-freight borders" [(ngModel)]="freight" type="number" placeholder="$Freight">
+    </div>
+    <h6 class="title2">Order Details</h6>
+    <div class="six-section">
+                  
+                 <select id="idemployees" class="cmb-products borders" [(ngModel)]="productSelectedValue" style="padding-right: 30px;">
+                  <option value="0" selected>Product*</option>
+                   
+                  @for(p of auxProducts.products; track $index)
+                  {
+                    <option value="{{p.productId}}">{{ p.productName }}</option>
+                  }    
+            </select>
+    </div>
+    <div class="seven-section">
+          <input class="input-address borders" [(ngModel)]="unitPrice" type="number" placeholder="Unit price">
+          <input class="input-city borders" [(ngModel)]="quantity" type="number" placeholder="Quantity">
+          <input class="input-country borders" [(ngModel)]="discount" type="number" placeholder="Discount">
+    </div>
+    <div class="buttons">
+      <span (click)="closeModal()" style="margin-right: 20px; color: green;cursor: pointer;">CLOSE</span><span (click)="saveOrderDetails()" style="color: green;margin-right: 20px;cursor: pointer;">SAVE</span>
+    </div>
+    </div>
+
+     <!--Optional JavaScript; choose one of the two!-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+    
+<!--  </body>
+</html>-->
+
+
+
+
+

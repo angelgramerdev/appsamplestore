@@ -18,6 +18,12 @@
       <div class="lockscreen"></div>
       <app-order (isModalOpenChanged)="closeModal($event)" [customerId]="customerId"></app-order>
     }
+
+    @if(isModalNewOrderOpen)
+    {
+      <div class="lockscreen"></div>
+      <app-new-order (isAuxModalOpenChanged)="closeModalNewOrder($event)" [customerId]="auxCustomerId"></app-new-order>
+    }
       <div class="general-container">
         <div class="header-predict">
           <span>Sales Date Prediction App</span>
@@ -50,10 +56,10 @@
                 {
                   <tr class="row1">
                     <td>{{c.customerName}}</td>
-                    <td>{{c.lastOrderDate | date:'MM/dd/yyyy'}}</td>
+                    <td>{{c.lastOrderDate | date: 'MM/dd/yyyy'}}</td>
                     <td>{{c.predictedDate | date: 'MM/dd/yyyy'}}</td>
-                    <td><span (click)="openModal(c.customerId)" style="cursor: pointer;"><a class="vieworders">VIEW ORDERS</a></span>
-                    <td><span><a class="neworders" href="">NEW ORDER</a> </span> </td>
+                    <td><span (click)="openModal(c.customerId)"><a class="vieworders">VIEW ORDERS</a></span>
+                    <td><span (click)="openModalNewOrder(c.customerId)"><a class="neworders">NEW ORDER</a> </span> </td>
                 </tr>
                 }
             </tbody>

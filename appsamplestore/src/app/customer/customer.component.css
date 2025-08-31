@@ -30,12 +30,14 @@
 {
     color: red;
     text-decoration: none;
+    cursor: pointer;
 }
 
 .neworders
 {
     color: green;
     text-decoration: none;
+    cursor: pointer;
 }
 
 .clspaginator
